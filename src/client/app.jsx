@@ -78,7 +78,21 @@ export default class App extends Component {
 				<div className="page-content-wrapper">
 					<div className="container-fluid">
 						<div className="row">
-							<h1>page title</h1>
+
+							<div className="navbar navbar-default navbar-static-top">
+								<div className="container">
+									<div className="navbar-header">
+										<span className="navbar-brand">Mon Jan 30 16:34:36 2017</span>
+									</div>
+									<ul className="nav navbar-nav">
+										<li><a href="#">action</a></li>
+										<li><a href="#">action</a></li>
+										<li><a href="#">action</a></li>
+										<li><a href="#">action</a></li>
+									</ul>
+								</div>
+							</div>
+
 							<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem architecto quisquam rerum, exercitationem quam, aspernatur magni quaerat! Facere dolorem magni fuga, rem, vel nisi tenetur libero, atque error tempore alias.</p>
 							<button onClick={_ => this.refs.wrapper.classList.toggle('toggled') }>menu</button>
 						</div>
