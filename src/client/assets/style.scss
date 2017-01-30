@@ -1,0 +1,97 @@
+@import "_bootstrap.scss";
+
+$purple: #8663c9;
+$white: #EEEEEE;
+$black: #242424;
+
+
+html,body,
+#app-react-container {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0px;
+}
+#app-react-container {
+	position: relative;
+	padding: 45px;
+	background: url(http://i.imgur.com/nSvIcfO.png);
+	background-size: cover;
+}
+
+.app-wrapper {
+	height: 100%; 
+	width: 100%; 
+	border-radius: 12px;
+	overflow: hidden;
+	position: relative;
+	&.toggled {
+		.sidebar-wrapper {
+			width: 0;
+		}
+		.page-content-wrapper {
+			width: 100%;
+			left: 0;
+		}
+	}
+}
+
+.sidebar-wrapper {
+	width: 250px; 
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba($purple, 0.88);
+	transition: width 200ms ease;
+}
+
+.sidebar-nav {
+	list-style: none;
+	li {
+		text-index: 10px;
+		line-height: 40px;
+		padding: 2px 0;
+		a {
+			width: calc( 100% - 20px );
+			padding: 0px 10px;
+			display: inline-block;
+			text-decoration: none;
+			color: $white;
+			cursor: pointer;
+			border-radius: 2px;
+			&:hover,&.active {
+				text-decoration: none;
+				background: rgba($white, 0.5);
+			}
+			&:active,&:focus {
+				text-decoration: none;
+			}
+		}
+	}
+	> .sidebar-brand {
+		height: 65px;
+		font-size: 18px;
+		line-height: 60px;
+		a {
+			display: inline-block;
+			border-bottom: 1px solid $white;
+			border-radius: 0;
+			&:hover {
+				background: transparent;
+			}
+		}
+	}
+}
+
+.page-content-wrapper {
+	position: absolute;
+	width: calc( 100% - 250px ); 
+	height: 100%;
+	left: 250px;
+	background: $white;
+	padding: 0 14px;
+	transition-property: width, left;
+	transition-timing-function: ease;
+	transition-duration: 200ms;
+}

@@ -1,0 +1,34 @@
+-- this should be up to date
+
+CREATE TABLE profile_details (
+	userid	SERIAL	PRIMARY KEY,
+	oauthid	VARCHAR(255),
+	login	VARCHAR(255),
+	gravatar_id	VARCHAR(255),
+	avatar_url	TEXT,
+	html_url	TEXT,
+	gists_url	TEXT,
+	email	VARCHAR(255),
+	blog	TEXT,
+	joined	DATE NOT NULL default CURRENT_DATE,
+	location TEXT
+);
+
+CREATE TABLE gist_store (
+	id 	SERIAL	PRIMARY KEY,
+	userid	VARCHAR(255),
+	gistid 	VARCHAR(255),
+	name	TEXT,
+	description	TEXT,
+	screenshot	TEXT,
+	matches	VARCHAR(255),
+	updated	VARCHAR(255),
+	total_installs INT
+);
+
+CREATE TABLE gist_store_votes (
+	id SERIAL 	PRIMARY KEY,
+	userid	VARCHAR(255),
+	gist_store_id	VARCHAR(255),
+	vote 	INT
+);
